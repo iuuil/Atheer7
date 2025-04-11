@@ -1,0 +1,1795 @@
+html, body {
+
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    background-color: white;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.headerr {
+    background-color: white; /* Set to a solid color instead of transparent */
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    position: fixed; /* Make navbar fixed */
+    top: 0; /* Stick to the top of the viewport */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 4px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.logo {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
+
+.logo img {
+    width: 50px; /* Set width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 1px; /* Optional: rounded corners */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    margin-right: 20px; /* Reduced space between logo and site name */
+}
+
+.site-name {
+    font-size: 25px; /* Font size for the site name */
+    color: #1e1e1e; /* Ensure text color is white */
+    text-decoration: none; /* Remove underline from link */
+    font-family: "Aref Ruqaa", serif;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 15px;
+    border: 1px solid #1e1e1e;
+    border-radius: 40px;
+    margin-right: 14px;
+}
+
+.site-name:hover {
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow:
+        0 0 55px #45a049,
+        0 0 100px #45a049;
+    }
+}
+
+.logo-and-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    background-color: white; /* Background color for header */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.bar {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.nav-list {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for horizontal layout */
+}
+
+.nav-item {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.nav-item > a {
+    display: block; /* Make links block elements */
+    padding: 15px 20px; /* Padding inside links */
+    color: #1e1e1e; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.2s ease, color 0.2s ease; /* Add transition for hover effects */
+}
+
+.nav-item:hover > a {
+    color: #4CAF50; /* Change text color to green on hover */
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+ 
+.sign-up-button-bar{
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 17px;
+    border: 1px solid #1e1e1e; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+    margin-right: 20px; /* Space between buttons and nav items */
+
+}
+
+.sign-up-button-bar:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #477023;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-box {
+    border: none;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    color: #1e1e1e;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: #477023;
+    filter: drop-shadow(2px 2px 1px #477023);
+}
+
+.search-button:hover {
+    transform: translateY(-0.5px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    filter: drop-shadow(2px 2px 1px #477023);
+}
+
+.setting-icon {
+    margin: 20px 20px;
+    cursor: pointer;
+}
+
+.setting-icon:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+}
+
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown relative to nav item */
+    /* top: 100%; // Position below the nav item */
+    background-color: white; /* Dark background for dropdown */
+    height: auto;
+    width: 140px;
+    /* opacity: 0; // Start hidden with opacity zero for fade effect */
+    transform: translateY(-100px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    padding: 17px; /* Padding inside dropdown links */ 
+    justify-items: center;
+    border-radius: 17px;
+}
+
+.nav-item:hover .dropdown {
+    display: block; /* Show dropdown on hover of nav item */
+    opacity: 1; /* Fade in the dropdown */
+    transform: translateY(0); /* Slide down to original position */
+    box-shadow: 0px 0px 14px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+}
+
+.dropdown li {
+    list-style-type: none; /* Remove bullet points from dropdown items */
+}
+
+.dropdown li a {
+    color: #2d2814;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.dropdown li a:hover {
+    color: #4CAF50; /* Green color on hover */
+}
+
+.sidebar {
+    position: fixed; /* Stay in place */
+    top: 110px;
+    left: -250px; /* Initially hidden off-screen to the left */
+    width: 250px; /* Width of the sidebar */
+    height: auto; /* Full height */
+    background-color: white; /* Background color */
+    color: #1e1e1e; /* Text color */
+    box-shadow: 2px 0px 17px rgba(76, 175, 80, 0.7); /* Shadow effect */
+    opacity: 0; /* Start hidden */
+    transform: translateX(0); /* No initial translation */
+    transition: left 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    padding: 20px; /* Padding inside the sidebar */
+    z-index: 1000; /* Ensure it's above other content */
+    border-radius: 14px;
+}
+
+.sidebar.active {
+    left: 14px; /* Move into view from the left */
+    opacity: 1; /* Fully visible */
+}
+
+.sidebar h2 {
+    margin-top: 0; /* Remove top margin */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px; /* Space between items */
+}
+
+.sidebar ul li a {
+    color: #1e1e1e; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 70px; /* More padding for desktop */
+    flex: 1; /* Allow main to grow and take available space */
+    margin-top: 92px;
+}
+
+.text-section {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #2d2814;
+    gap: 20px;
+}
+
+.text-section p {
+    font-size: 1.5em; /* Larger text for better readability */
+}
+
+.images-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.volunteer-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 20px 20px; /* Padding inside buttons */
+    margin-right: 20px;
+}
+
+.volunteer-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+}
+
+.photo1,
+.photo2,
+.photo3,
+.photo4 {
+    width: 200px; /* Size for the first image */
+    height: auto;
+    border-radius: 7px;
+    filter: drop-shadow(9px 9px 7px #477023);
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.photo1:hover,
+.photo2:hover,
+.photo3:hover,
+.photo4:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
+}
+
+.photo1 {
+    margin-top: 0; /* Space below the first image (adjust as needed) */
+}
+
+.photo2 {
+    margin-top: 100px; /* Space below the second image (adjust as needed) */
+}
+
+.photo3 {
+    margin-top: 0; /* Space below the first image (adjust as needed) */
+}
+
+.photo4 {
+    margin-top: 100px; /* Space below the second image (adjust as needed) */
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.volunteer-section {
+    padding: 70px; /* Add some padding around the section */
+    text-align: center; /* Center align text */
+    background-color: white; /* Slightly lighter background for contrast */
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+.volunteer-message {
+    font-size: 1.5em; /* Increase font size for emphasis */
+    margin-bottom: 20px; /* Space between text and image gallery */
+    color: #2d2814;
+}
+
+.image-gallery {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center images horizontally */
+    flex-wrap: wrap;
+    gap: 30px; /* Space between images */
+}
+
+.gallery-image {
+    width: 170px; /* Set a fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    filter: drop-shadow(9px 9px 7px #477023);
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.gallery-image:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
+}
+
+/* __________________________________________________________________________________________________________________*/
+
+.connect-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    gap: 20px;
+    padding: 100px; /* Add padding around the section */
+    background-color: white; /* Light background for contrast */
+}
+
+.connect-text {
+    max-width: 60%; /* Limit the width of the text container */
+    color: #2d2814;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+}
+
+.connect-text h2 {
+    font-size: 2.5em; /* Increase font size for emphasis */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+.connect-text p {
+    font-size: 1.1em; /* Slightly larger font size for description */
+    margin-bottom: 20px; /* Space below description */
+}
+
+.join-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 20px 20px; /* Padding inside buttons */
+    margin-right: 20px;
+}
+
+.join-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px; /* Space between icons */
+}
+
+.social-icon {
+    font-size: 1.7em; /* Size of social media icons */
+    color: #333; /* Default icon color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-icon:hover {
+    color: #4CAF50; /* Change color on hover for visual feedback */
+}
+
+/* _____________________________________________________________________ */
+
+.testimonial-section {
+    padding: 70px; /* Add padding around the section */
+    background-color: white; /* Light green background for contrast */
+    text-align: center; /* Center align text */
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+.testimonial-header h2 {
+    font-size: 1.7em; /* Increase font size for emphasis */
+    margin-bottom: 10px; /* Space below heading */
+    color: #2d2814;
+}
+
+.testimonial-header p {
+    margin-bottom: 20px; /* Space below description */
+    color: #2d2814;
+    font-size: 1em;
+}
+
+.testimonial-container {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: transparent; /* Transparent background for buttons */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.7em;
+}
+
+.rating-box {
+    background-color: #2d2814; /* White background for rating box */
+    border-radius: 8px; /* Rounded corners for box */
+    width: 400px; /* Fixed width for consistency */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(9px 9px 7px #477023);
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.rating-box:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+}
+
+.palm-tree {
+    font-size: 1.7em; /* Increase size of palm tree icon */
+}
+
+.user-comment {
+    font-style: italic; /* Italicize user comments for emphasis */
+}
+
+.user-name {
+    font-weight: bold; /* Bold user names */
+}
+
+.profile-pic {
+    width: 140px; /* Fixed width for profile pictures */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10%; /* Circular profile picture */
+}
+
+/* ________________________________________________________________________________________________ */
+
+/* CSS Transitions */
+main {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.volunteer-section {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.connect-section {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.testimonial-section {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Initial States */
+main {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.volunteer-section {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.connect-section {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.testimonial-section {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Add this class when section is in viewport */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ________________________________________________________________________________________________ */
+
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 70px;
+    background-color: white;
+    margin-top: 50px;
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+.signup-container {
+    width: 500px;
+    background-color: #2d2814;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.signup-input, 
+.signup-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #477023;
+    background-color: white;
+    color: #2d2814;
+}
+
+.location-group {
+    display: flex;
+    gap: 20px;
+}
+
+.country-select, 
+.phone-input {
+    flex: 1;
+}
+
+.phone-input .phone-country-container {
+    display: flex;
+    gap: 10px;
+}
+
+.country-select {
+    flex: 1;
+    max-width: 100px;
+}
+
+.phone-input-box {
+    flex: 3;
+}
+
+.create-account-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+}
+
+.create-account-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+}
+
+/* Login message styling */
+.login-message {
+    margin-top: 0px;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+}
+
+.login-message a {
+    color: #4CAF50; /* Make the "log in" text green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-message a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #3d601d; /* Darker green on hover */
+}
+
+/* ________________________________________________________________________________________________ */
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: calc(100vh - 140px);
+    margin-top: 120px;
+    background-color: white;
+    filter: drop-shadow(0px 0px 7px #000000);
+}
+
+.login-container {
+    width: 500px;
+    background-color: #2d2814;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 10px #000000);
+
+    flex-wrap: wrap;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.login-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #477023;
+    background-color: white;
+    color: #2d2814;
+}
+
+.login-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+}
+
+.login-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.donation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    background-color: white;
+    margin-top: 120px;
+    filter: drop-shadow(0px 0px 7px #000000);
+}
+
+.donation-container {
+    width: 550px;
+    background-color: #2d2814;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 7px #000000);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.selection-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #477023;
+    background-color: white;
+    color: #2d2814;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+.show-nurseries-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+    width: 100%;
+}
+
+.show-nurseries-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+}
+
+.nursery-list {
+    width: 97.5%; /* Full width of the section */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white; /* Optional: different background */
+    filter: drop-shadow(0px 0px 7px #000000);
+}
+
+.nursery-box {
+    width: calc(33.33% - 20px); /* 3 boxes per row with gaps */
+    background-color: #2d2814;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.nursery-image-container {
+    width: auto; /* Make width flexible */
+    height: auto; /* Make height flexible */
+    overflow: hidden; /* Hide any overflow */
+    text-align: center;
+}
+
+.nursery-image {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+.nursery-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+
+.volunteers-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    background-color: white;
+    margin-top: 120px;
+    filter: drop-shadow(0px 0px 7px #000000);
+}
+
+.volunteers-container {
+    width: 550px;
+    background-color: #2d2814;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 7px #000000);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.selection-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #477023;
+    background-color: white;
+    color: #2d2814;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+.show-campaigns-button {
+    background-color: #477023; /* White background for buttons */
+    color: white; /* Green text color */
+    font-size: 24px;
+    border: 1px solid #2d2814; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+}
+
+.show-campaigns-button:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+}
+
+.campaigns-list {
+    width: 97.5%; /* Full width of the section */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white; /* Optional: different background */
+    filter: drop-shadow(0px 0px 7px #000000);
+    display: none;
+}
+
+.campaign-box {
+    width: calc(33.33% - 20px); /* 3 boxes per row with gaps */
+    background-color: #2d2814;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.campaign-image-container {
+    width: auto; /* Make width flexible */
+    height: auto; /* Make height flexible */
+    overflow: hidden; /* Hide any overflow */
+    text-align: center;
+}
+
+.campaign-image {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+.campaign-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* General layout */
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    margin-top: 120px;
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+/* Date Styling */
+.weekly-date {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d2814;
+}
+
+/* News Container */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Side containers */
+.left-side-bb,
+.right-side-bb,
+.center-bb {
+    width: 100%; /* Initially take full width */
+    margin-bottom: 20px; /* Add space between boxes */
+}
+
+/* News boxes */
+.left-side-box,
+.center-box,
+.right-side-box {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/* Image styling */
+.news-image {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Text styling */
+.news-text {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Comment section */
+.comment-section {
+    margin-top: 15px;
+}
+
+.comment-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: center;
+}
+
+.comment-input-area {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.send-icon {
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #477023;
+    cursor: pointer;
+}
+
+/* Show more button */
+.show-more-button {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.show-more-button:hover {
+    background-color: #3d601d;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .left-side-bb,
+    .center-bb,
+    .right-side-bb {
+        width: 30%; /* Restore original width */
+        margin-bottom: 0; /* Remove extra margin */
+    }
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* General layout for the current-campaign section */
+.current-campaign {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    margin-top: 120px;
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+.current-campaign-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* Left side styling (Search and Menu) */
+.current-campaign .left-side-cc {
+    width: 25%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.current-campaign .left-side-cc .search-box {
+    background-color: #2d2814;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.current-campaign .left-side-cc .search input[type="text"] {
+    border: none;
+    border-radius: 4px;
+    width: 75%;
+    color: #2d2814;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.current-campaign .left-side-cc .search button {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.current-campaign .left-side-cc .menu-box {
+    background-color: #2d2814;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.current-campaign .left-side-cc select {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    color: #2d2814;
+    width: 100%;
+}
+
+.current-campaign .left-side-cc .search-city-button {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.current-campaign .left-side-cc .search-city-button:hover {
+    background-color: #3d601d;
+}
+
+.current-campaign .left-side-cc .search-city-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Center styling (Campaign display) */
+.current-campaign .center-cc {
+    width: 40%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.current-campaign #campaign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-campaign .currentcampaginsbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-campaign .campaignbox {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 15px;
+}
+
+.current-campaign .campaign-content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.current-campaign .campaign-content .campaign-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.current-campaign .campaign-details {
+    flex: 1;
+    text-align: left;
+}
+
+.current-campaign .campaign-details .campaign-description {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.current-campaign .campaign-details .location {
+    font-style: italic;
+    color: #555;
+}
+
+.current-campaign .comments {
+    margin-top: 15px;
+}
+
+.current-campaign .comments .registration-button {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.current-campaign .comments .registration-button:hover {
+    background-color: #3d601d;
+}
+
+/* Right side styling (Map) */
+.current-campaign .right-side-cc {
+    width: 25%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.current-campaign .right-side-cc .map-box {
+    background-color: #2d2814;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.current-campaign .right-side-cc .map-box .map-box-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    color: #2d2814;
+}
+
+.current-campaign .right-side-cc .map-box .view-map {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.current-campaign .right-side-cc .map-box .view-map:hover {
+    background-color: #3d601d;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .current-campaign .left-side-cc,
+    .current-campaign .center-cc,
+    .current-campaign .right-side-cc {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .current-campaign .campaign-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .current-campaign .campaign-content .campaign-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* Profile section container */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+
+    margin-top: 120px;
+    filter: drop-shadow(0px 0px 7px #477023);
+}
+
+/* Inner profile container */
+.profile-container {
+    width: 70%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.im-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Avatar styling */
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #477023;
+}
+
+/* Name styling */
+.profile-name {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Stats section */
+.profile-stats {
+    display: flex;
+    flex-direction: row; /* Stack stats vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 93%;
+}
+
+.profile-stats-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-stats div {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px; /* Add spacing between stats */
+}
+
+/* Plant a tree box */
+.plant-tree-box {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.plant-tree-box i {
+    font-size: 2em;
+    color: #477023;
+    margin-bottom: 10px;
+}
+
+.plant-tree-box p {
+    color: #555;
+}
+
+/* Update profile button */
+.update-profile-button {
+    background-color: #477023;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-profile-button:hover {
+    background-color: #3d601d;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Import Aref Ruqaa font */
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
+
+/* style.css */
+/* Game Page Section Styles */
+.game-page-section {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    /* Adjust padding as needed */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+    margin-top: 90px;
+    justify-content: center;
+}
+
+.center {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.right-side {
+    width: 30%;
+    /* Adjust width as needed */
+    padding: 20px;
+    /* Adjust padding as needed */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+}
+
+/* Push the .center div to the left */
+.center {
+    order: -1;
+    /* Moves the center div to the start */
+    /* Takes up 60% of the container */
+}
+
+/* You can adjust the .post-box and .games-box as needed */
+.post-box {
+    background-color: rgb(255, 255, 255); /* White background for game box */
+    border: #477023 solid 4px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.games-box {
+    /* Add styling for games-box */
+    border: 1px solid #b40202;
+    /* Example border */
+    padding: 10px;
+    margin-bottom: 20px;
+    /* Add some margin */
+}
+
+.avatar {
+    font-size: 30px;
+    border-radius: 50%; /* Circular avatar */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 5px;
+    margin-top: 10px;
+    color: #477023;
+}
+
+.input-area {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+.description-input {
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px #45a049 solid;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.post-icon {
+    font-size: 20px;
+    color: #45a049; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+.post-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.posted-photo {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.posted-photo img {
+    width: 100%; /* Full width of the container */
+    max-height: 200px; /* Limit height of the image */
+    object-fit: cover; /* Maintain aspect ratio while covering area */
+    border-radius: 5px;
+}
+
+/*
+.water-drop-icon {
+    width: 70px; 
+    color: #6f9cf6;
+    cursor: pointer;
+}
+
+.water-drop-count {
+    font-size: 24px; 
+}
+
+.top-water-drop-box {
+    background-color: black; 
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5);
+}
+        */
+
+.game-box {
+    background-color: rgb(255, 255, 255); /* White background for game box */
+    color: #000000;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.likes {
+    align-items: center; /* Center likes icon and count vertically */
+}
+
+.water-drop-icon1 {
+    width: 10px; /* Adjust icon size */
+    color: #6f9cf6;
+    margin-left: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.like-count {
+    margin-left: 0px; /* Space between icon and count */
+}
+
+hr {
+    width: 100%;
+    border-top: 2px solid #45a049;
+    border-top: 2px solid #45a049;
+}
+
+/* ---- */
+.game-image {
+    width: 40%; /* Make image responsive to fit the box width */
+    max-width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+/* ---- */
+.game-description {
+    margin-top: 10px; /* Space above description text */
+    margin-left: 20px;
+}
+
+/* ---- */
+.comment-link {
+    color: #4CAF50; /* Green color for comment link */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* ---- */
+.comment-input-area {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+/* ---- */
+.comment-input {
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px #45a049 solid;
+    margin-left: 20px;
+}
+
+/* ---- */
+.comment-input:hover {
+    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+}
+
+/* ---- */
+.send-comment-icon {
+    font-size: 20px;
+    color: #45a049; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 14px;
+}
+
+.comment-icon {
+    margin-left: 7px;
+}
+
+/* ---- */
+.user-thumbnail {
+    width: 70px; /* Thumbnail size */
+    border-radius: 100%; /* Circular thumbnails */
+    filter: drop-shadow(6px 2px 7px rgba(76, 175, 80, 0.7));
+    cursor: pointer;
+    padding: 7px;
+}
+
+/* ---- */
+.user-thumbnail:hover {
+    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+}
+
+/* ---- */
+.user-name {
+    font-weight: bold; /* Bold user name */
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ---- */
+.comments {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* ---- */
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px dashed #45a049;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+/* ---- */
+.comment:hover {
+    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+}
+
+/* ---- */
+.comment-content {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.send-comment-button {
+   margin-top: 10px;
+   padding: 10px;
+   background-color: #4CAF50;
+   color: white;
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+
+.send-comment-button:hover {
+   background-color: #45a049; /* Darker green on hover */ 
+}
+
+.user-water-drop {
+    background-color: rgb(255, 255, 255); /* Light blue background */
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    margin-bottom: 20px;
+}
+
+.topwaterdropbox h3 {
+   text-align: center; /* Center title in top water drop box */
+   margin-bottom: 15px; 
+}
+
+.topwaterdropbox {
+    background-color: rgb(255, 255, 255); /* Light blue background */
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+}
+
+.top-water-drop {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.top-water-drop-content {
+    display: flex;
+    align-items: center;
+}
+
+.water-drop-count {
+    font-size: 17px;
+}
+/* ------------------------------------------------------------------------------------------ */
+
+.about-us-section {
+    padding: 40px; /* Add padding around the section */
+    background-color: white; /* Light background for contrast */
+    color: #477023;
+    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */ 
+}
+
+.about-us-section h2 {
+    text-align: center; /* Center align the main heading */
+    font-size: 2.5em; /* Increase font size for emphasis */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.about-content {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: center; /* Center items horizontally */
+}
+
+.about-item {
+    background-color: #2d2814; /* White background for each item */
+    color: white;
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside each item */
+    margin: 10px; /* Space between items */
+    width: 350px; /* Fixed width for consistency */
+    height: auto;
+    filter: drop-shadow(9px 9px 7px #477023);
+}
+
+.about-item h3 {
+    font-size: 1.5em; /* Font size for subheadings */
+    margin-bottom: 10px; /* Space below subheading */
+}
+
+.about-item p {
+    margin-bottom: 10px; /* Space below paragraph */
+}
+
+.about-item ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding-left: 0; /* Remove default padding */
+}
+
+.about-item ul li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.about-item a {
+    color: #477023; /* Green color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.about-item a:hover {
+    text-decoration: underline white; /* Underline on hover for links */
+}
+
+.about-item:hover {
+    transform: translateY(-4px); /* Start slightly above to create a slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
+    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
