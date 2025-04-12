@@ -103,15 +103,24 @@
 
     <section class="profile-section">
         <div class="profile-container">
-
+    
             <div class="im-name">
-
-                <img src="photos/spider-man-marvel-3840x2160-11025.jpg" alt="Profile Avatar" class="profile-avatar">
+    
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload"><i class="fas fa-edit"></i></label>
+                    </div>
+                    <div class="avatar-preview">
+                        <div id="imagePreview">
+                        </div>
+                    </div>
+                </div>
     
                 <div class="profile-name">أثير</div>
     
             </div>
-
+    
             <div class="profile-stats">
                 <div class="profile-stats-value">
                     <div>
@@ -194,6 +203,7 @@
 
     <script src="js/scriptdarklightmode.js"></script>
     <script src="js/scriptsidebar.js"></script>
+    <script src="js/scriptuploadavatar.js"></script>
 
     <footer>
         <p>&copy; CopyRight</p>
