@@ -1,9 +1,39 @@
-html, body {
+/* Define root variables for colors, fonts, sizes, and more */
+:root {
+    --primary-color: #6dbe47; /* Main green color */
+    --sec-primary-color: #78d247;
+    --secondary-color: #2d2814; /* Darker neutral color */
+    --accent-color: #477023; /* Brighter green/hover color */
+    --third-color: rgba(0, 255, 8, 1);
+    --light-color: white; /* Light background color */
+    --dark-color: #1e1e1e; /* Dark text color */
+    --font-main: 'Arial', sans-serif; /* Main font family */
+    --font-secondary: 'Aref Ruqaa', serif; /* Secondary font family */
+    --def-box-shadow: 0px 0px 7px var(--accent-color); /* Default box shadow */
+    --light-box-shadow: 2px 0px 17px rgba(76, 175, 80, 0.7); /* Shadow effect */
+    --inset-light-box-shadow: inset 2px 0px 17px rgba(76, 175, 80, 0.7);
+    --lighter-box-shadow: 0px 0px 17px rgba(0, 255, 8, 0.5);
+    --inset-lighter-box-shadow: inset 0px 0px 17px rgba(0, 255, 8, 0.5);
+    --photo-box-shadow: 7px 7px 24px var(--primary-color);
+    --filter-shadow: drop-shadow(9px 9px 7px var(--primary-color));
+    --dark-box-shadow77: 7px 7px 14px rgba(49, 31, 14, 0.7); 
+    --dark-box-shadow44: 4px 4px 17px rgba(49, 31, 14, 1);
+    --section-filter: drop-shadow(0px 0px 10px #000000);
+    --border-radius: 8px; /* Default border radius */
+    --transition: 0.3s ease; /* Default smooth transition */
+    --font-size-main: 24px;
+}
 
+@font-face {
+    font-family: 'atheer';
+    src: url(/Atheer7/fonts/\(A\)\ Arslan\ Wessam\ A\ \(A\)\ Arslan\ Wessam\ A.ttf);
+}
+
+html, body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    background-color: white;
+    font-family: 'atheer', sans-serif;
+    font-size: 30px;
+    background-color: var(--light-color);
     color: #ffffff;
     display: flex;
     flex-direction: column; /* Stack children vertically */
@@ -11,8 +41,8 @@ html, body {
 
 .headerr {
     background-color: white; /* Set to a solid color instead of transparent */
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    box-shadow: var(--lighter-box-shadow); /* Clear inner shadow */
+    /* transition: background-color 0.3s ease; Smooth transition for background color */
     position: fixed; /* Make navbar fixed */
     top: 0; /* Stick to the top of the viewport */
     left: 0;
@@ -51,7 +81,7 @@ html, body {
     display: inline-block;
     text-decoration: none;
     padding: 5px 15px;
-    border: 1px solid #1e1e1e;
+    border: 1px solid var(--dark-color);
     border-radius: 40px;
     margin-right: 14px;
 }
@@ -63,8 +93,8 @@ html, body {
 @keyframes pulsate {
     0%{
         box-shadow:
-        0 0 55px #45a049,
-        0 0 100px #45a049;
+        0 0 55px var(--third-color),
+        0 0 100px var(--third-color);
     }
 }
 
@@ -111,7 +141,7 @@ html, body {
 }
 
 .nav-item:hover > a {
-    color: #4CAF50; /* Change text color to green on hover */
+    color: var(--primary-color); /* Change text color to green on hover */
     transform: scale(1.05); /* Scale up slightly on hover */
 }
 
@@ -124,10 +154,10 @@ html, body {
 }
  
 .sign-up-button-bar{
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
     font-size: 17px;
-    border: 1px solid #1e1e1e; /* Remove default border */
+    border: 1px solid var(--dark-color); /* Remove default border */
     border-radius: 5px; /* Rounded corners for buttons */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 10px 10px; /* Padding inside buttons */
@@ -138,13 +168,13 @@ html, body {
 .sign-up-button-bar:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+    box-shadow: var(--dark-box-shadow77); /* Darker shadow on hover */
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    border: 2px solid #477023;
+    border: 2px solid var(--primary-color);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -154,7 +184,7 @@ html, body {
     padding: 10px;
     outline: none;
     background-color: transparent;
-    color: #1e1e1e;
+    color: var(--dark-color);
 }
 
 .search-button {
@@ -162,14 +192,14 @@ html, body {
     border: none;
     padding: 10px;
     cursor: pointer;
-    color: #477023;
-    filter: drop-shadow(2px 2px 1px #477023);
+    color: var(--accent-color);
+    filter: drop-shadow(2px 2px 1px var(--sec-primary-color));
 }
 
 .search-button:hover {
     transform: translateY(-0.5px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    filter: drop-shadow(2px 2px 1px #477023);
+    filter: drop-shadow(2px 2px 1px var(--primary-color));
 }
 
 .setting-icon {
@@ -186,7 +216,7 @@ html, body {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown relative to nav item */
     /* top: 100%; // Position below the nav item */
-    background-color: white; /* Dark background for dropdown */
+    background-color: var(--light-color); /* Dark background for dropdown */
     height: auto;
     width: 140px;
     /* opacity: 0; // Start hidden with opacity zero for fade effect */
@@ -201,7 +231,7 @@ html, body {
     display: block; /* Show dropdown on hover of nav item */
     opacity: 1; /* Fade in the dropdown */
     transform: translateY(0); /* Slide down to original position */
-    box-shadow: 0px 0px 14px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+    box-shadow: var(--light-box-shadow);
 }
 
 .dropdown li {
@@ -215,7 +245,7 @@ html, body {
 }
 
 .dropdown li a:hover {
-    color: #4CAF50; /* Green color on hover */
+    color: var(--accent-color); /* Green color on hover */
 }
 
 .sidebar {
@@ -224,15 +254,25 @@ html, body {
     left: -250px; /* Initially hidden off-screen to the left */
     width: 250px; /* Width of the sidebar */
     height: auto; /* Full height */
-    background-color: white; /* Background color */
-    color: #1e1e1e; /* Text color */
-    box-shadow: 2px 0px 17px rgba(76, 175, 80, 0.7); /* Shadow effect */
+    background-color: var(--light-color); /* Background color */
+    color: var(--dark-color); /* Text color */
+    box-shadow: var(--light-box-shadow); /* Shadow effect */
     opacity: 0; /* Start hidden */
     transform: translateX(0); /* No initial translation */
     transition: left 0.3s ease, opacity 0.3s ease; /* Smooth transition */
     padding: 20px; /* Padding inside the sidebar */
     z-index: 1000; /* Ensure it's above other content */
     border-radius: 14px;
+}
+
+.sidebar a {
+    text-decoration: none; /* Remove underline for links */
+    color: inherit; /* Inherit the color from the parent */
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color); /* Optional: Add hover effect */
 }
 
 .sidebar.active {
@@ -254,68 +294,125 @@ html, body {
 }
 
 .sidebar ul li a {
-    color: #1e1e1e; /* Link color */
+    color: var(--dark-color); /* Link color */
     text-decoration: none; /* Remove underline */
 }
 
 /* ------------------------------------------------------------------------------------------------ */
+/* .donation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    background-image: url('/Atheer7/photos/photo29.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 120px;
+    filter: var(--section-filter);
+}
 
+.donation-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(7px);
+    z-index: -1;
+} 
+*/
 main {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column; /* Stack text and images vertically */
+    align-items: center; /* Align items to the right */
     gap: 20px;
-    padding: 70px; /* More padding for desktop */
-    flex: 1; /* Allow main to grow and take available space */
-    margin-top: 92px;
+    min-height: 520px;
+    padding: 50px;
+    margin-top: 110px;
+    background-image: url('/Atheer7/photos/photo_1_2025-04-13_22-36-00.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: var(--section-filter);
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .text-section {
     display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    align-items: center;
-    color: #2d2814;
+    flex-direction: row; /* Stack text and button vertically */
+    align-items: center; /* Align items to the right */
+    text-align: center;
+    color: var(--light-color);
     gap: 20px;
+    width: 100%; /* Ensure text section takes full width */
+    text-align: right; /* Align text to the right */
 }
 
 .text-section p {
-    font-size: 1.5em; /* Larger text for better readability */
+    font-size: 1.7em;
+    margin-bottom: 10px; /* Add some space below the text */
 }
 
 .images-section {
-    display: flex;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center images horizontally */
+    align-items: center;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 40px;
+    gap: 20px;
+    width: 100%; /* Ensure images section takes full width */
+}
+
+.images-section img {
+    width: calc(30% - 90px); /* Two images per row with spacing */
+    max-width: none; /* Override any max-width set on individual images */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin-bottom: 20px;
 }
 
 .volunteer-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: var(--primary-color);
+    color: var(--light-color);
     font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 20px 20px; /* Padding inside buttons */
-    margin-right: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px 20px;
 }
 
 .volunteer-button:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+    background-color: var(--accent-color);
 }
 
 .photo1,
 .photo2,
 .photo3,
 .photo4 {
-    width: 200px; /* Size for the first image */
-    height: auto;
-    border-radius: 7px;
-    filter: drop-shadow(9px 9px 7px #477023);
-    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    filter: var(--filter-shadow);
+    transition: box-shadow 0.3s ease;
+    object-fit: contain;
 }
 
 .photo1:hover,
@@ -324,23 +421,7 @@ main {
 .photo4:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
-}
-
-.photo1 {
-    margin-top: 0; /* Space below the first image (adjust as needed) */
-}
-
-.photo2 {
-    margin-top: 100px; /* Space below the second image (adjust as needed) */
-}
-
-.photo3 {
-    margin-top: 0; /* Space below the first image (adjust as needed) */
-}
-
-.photo4 {
-    margin-top: 100px; /* Space below the second image (adjust as needed) */
+    box-shadow: var(--photo-box-shadow);
 }
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -349,13 +430,13 @@ main {
     padding: 70px; /* Add some padding around the section */
     text-align: center; /* Center align text */
     background-color: white; /* Slightly lighter background for contrast */
-    filter: drop-shadow(0px 0px 7px #477023);
+    box-shadow: var(--lighter-box-shadow);
 }
 
 .volunteer-message {
     font-size: 1.5em; /* Increase font size for emphasis */
     margin-bottom: 20px; /* Space between text and image gallery */
-    color: #2d2814;
+    color: var(--secondary-color);
 }
 
 .image-gallery {
@@ -366,34 +447,39 @@ main {
 }
 
 .gallery-image {
-    width: 170px; /* Set a fixed width for images */
+    max-width: 100%; /* Ensure images don't exceed the container width */
+    max-height: 300px; /* Limit image height */
+    width: auto; /* Maintain aspect ratio */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: Add rounded corners */
-    filter: drop-shadow(9px 9px 7px #477023);
+    filter: var(--filter-shadow);
     transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    object-fit: contain; /* Make sure the whole image is visible */
 }
+
 
 .gallery-image:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
+    box-shadow: var(--photo-box-shadow);
 }
 
 /* __________________________________________________________________________________________________________________*/
 
+/*
 .connect-section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex: 1;
     gap: 20px;
-    padding: 100px; /* Add padding around the section */
-    background-color: white; /* Light background for contrast */
+    padding: 100px; 
+    background-color: var(--light-color);
 }
 
 .connect-text {
-    max-width: 60%; /* Limit the width of the text container */
-    color: #2d2814;
+    max-width: 60%;
+    color: var(--secondary-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -401,67 +487,68 @@ main {
 }
 
 .connect-text h2 {
-    font-size: 2.5em; /* Increase font size for emphasis */
-    margin-bottom: 15px; /* Space below heading */
+    font-size: 2.5em;
+    margin-bottom: 15px;
 }
 
 .connect-text p {
-    font-size: 1.1em; /* Slightly larger font size for description */
-    margin-bottom: 20px; /* Space below description */
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
 .join-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: #477023;
+    color: white;
     font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 20px 20px; /* Padding inside buttons */
+    border: 1px solid #2d2814;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px 20px;
     margin-right: 20px;
 }
 
 .join-button:hover {
-    transform: translateY(-4px); /* Start slightly above to create a slide effect */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); /* Darker shadow on hover */
+    transform: translateY(-4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 7px 7px 14px rgba(49, 31, 14, 0.7); 
 }
 
 .social-icons {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 30px; /* Space between icons */
+    gap: 30px;
 }
 
 .social-icon {
-    font-size: 1.7em; /* Size of social media icons */
-    color: #333; /* Default icon color */
-    text-decoration: none; /* Remove underline from links */
+    font-size: 1.7em;
+    color: #333;
+    text-decoration: none;
 }
 
 .social-icon:hover {
-    color: #4CAF50; /* Change color on hover for visual feedback */
+    color: #4CAF50;
 }
+*/
 
 /* _____________________________________________________________________ */
 
 .testimonial-section {
     padding: 70px; /* Add padding around the section */
-    background-color: white; /* Light green background for contrast */
+    background-color: var(--light-color); /* Light green background for contrast */
     text-align: center; /* Center align text */
-    filter: drop-shadow(0px 0px 7px #477023);
+    box-shadow: var(--lighter-box-shadow);
 }
 
 .testimonial-header h2 {
     font-size: 1.7em; /* Increase font size for emphasis */
     margin-bottom: 10px; /* Space below heading */
-    color: #2d2814;
+    color: var(--secondary-color);
 }
 
 .testimonial-header p {
     margin-bottom: 20px; /* Space below description */
-    color: #2d2814;
+    color: var(--secondary-color);
     font-size: 1em;
 }
 
@@ -481,7 +568,7 @@ main {
 }
 
 .rating-box {
-    background-color: #2d2814; /* White background for rating box */
+    background-color: var(--secondary-color); /* White background for rating box */
     border-radius: 8px; /* Rounded corners for box */
     width: 400px; /* Fixed width for consistency */
     height: 400px;
@@ -489,37 +576,33 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(9px 9px 7px #477023);
+    filter: var(--filter-shadow);
     transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .rating-box:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+    box-shadow: var(--photo-box-shadow);
 }
 
 .palm-tree {
-    font-size: 1.7em; /* Increase size of palm tree icon */
+    font-size: 1.4em; /* Increase size of palm tree icon */
 }
 
 .user-comment {
     font-style: italic; /* Italicize user comments for emphasis */
 }
 
-.user-name {
-    font-weight: bold; /* Bold user names */
-}
-
 .profile-pic {
     width: 140px; /* Fixed width for profile pictures */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10%; /* Circular profile picture */
+    border-radius: 100%; /* Circular profile picture */
 }
 
 /* ________________________________________________________________________________________________ */
 
-/* CSS Transitions */
+/* CSS Transitions 
 main {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
@@ -536,7 +619,6 @@ main {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* Initial States */
 main {
     opacity: 0;
     transform: translateY(20px);
@@ -557,11 +639,10 @@ main {
     transform: translateY(20px);
 }
 
-/* Add this class when section is in viewport */
 .section-visible {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
 /* ________________________________________________________________________________________________ */
 
@@ -571,18 +652,18 @@ main {
     align-items: center;
     min-height: calc(100vh - 140px);
     padding: 70px;
-    background-color: white;
+    background-color: var(--light-color);
     margin-top: 50px;
-    filter: drop-shadow(0px 0px 7px #477023);
+    filter: var(--section-filter);
 }
 
 .signup-container {
     width: 500px;
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     padding: 40px;
     border-radius: 8px;
-    filter: drop-shadow(0px 0px 7px #477023);
+    filter: var(--filter-shadow);
 }
 
 .signup-form {
@@ -605,9 +686,9 @@ main {
 .signup-select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #477023;
-    background-color: white;
-    color: #2d2814;
+    border: 2px solid var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--secondary-color);
 }
 
 .location-group {
@@ -635,10 +716,10 @@ main {
 }
 
 .create-account-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
     font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
+    border: 2px solid var(--dark-color); /* Remove default border */
     border-radius: 5px; /* Rounded corners for buttons */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 10px 10px; /* Padding inside buttons */
@@ -647,29 +728,27 @@ main {
 .create-account-button:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+    background-color: var(--accent-color);
 }
 
-/* Login message styling */
 .login-message {
     margin-top: 0px;
     text-align: center;
-    color: white;
+    color: var(--light-color);
     font-size: 1em;
 }
 
 .login-message a {
-    color: #4CAF50; /* Make the "log in" text green */
+    color: var(--sec-primary-color); /* Make the "log in" text green */
     text-decoration: none;
     font-weight: bold;
 }
 
 .login-message a:hover {
     text-decoration: underline; /* Add underline on hover */
-    color: #3d601d; /* Darker green on hover */
+    color: var(--sec-primary-color); /* Darker green on hover */
 }
 
-/* Avatar Upload Styles */
 .avatar-upload {
     position: relative;
     max-width: 200px;
@@ -693,31 +772,31 @@ main {
     height: 34px;
     margin-bottom: 0;
     border-radius: 100%;
-    background: #477023;
+    background: var(--primary-color);
     border: 1px solid transparent;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
     cursor: pointer;
     font-weight: normal;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--light-color);
     font-size: 1.2em;
 }
 
+/*
 .avatar-upload .avatar-edit input+label:hover {
-    background: #f1f1f1;
-    border-color: #d2d2d2;
+    background: var(--dark-color);
+    border-color: var(--dark-color);
 }
+*/
 
 .avatar-upload .avatar-preview {
     width: 150px;
     height: 150px;
     position: relative;
     border-radius: 100%;
-    border: 6px solid #f8f8f8;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 6px solid var(--light-color);
 }
 
 .avatar-upload .avatar-preview>div {
@@ -747,18 +826,17 @@ main {
     flex-shrink: 1;
     min-height: calc(100vh - 140px);
     margin-top: 120px;
-    background-color: white;
-    filter: drop-shadow(0px 0px 7px #000000);
+    background-color: var(--light-color);
+    filter: var(--section-filter);
 }
 
 .login-container {
     width: 500px;
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     padding: 40px;
     border-radius: 8px;
-    filter: drop-shadow(0px 0px 10px #000000);
-
+    filter: var(--filter-shadow);
     flex-wrap: wrap;
 }
 
@@ -781,16 +859,16 @@ main {
 .login-input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #477023;
-    background-color: white;
-    color: #2d2814;
+    border: 2px solid var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--secondary-color);
 }
 
 .login-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
     font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
+    border: 2px solid var(--dark-color); /* Remove default border */
     border-radius: 5px; /* Rounded corners for buttons */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 10px 10px; /* Padding inside buttons */
@@ -799,28 +877,59 @@ main {
 .login-button:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+    background-color: var(--accent-color);
 }
 
 /* ------------------------------------------------------------------------------------------------ */
+
+/* .donation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    background-image: url('/Atheer7/photos/photo29.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 120px;
+    filter: var(--section-filter);
+}
+
+.donation-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(7px);
+    z-index: -1;
+} 
+*/
 
 .donation-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 140px);
-    background-color: white;
+    background-color: var(--light-color); 
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    position: relative; /* Needed for the blur effect */
     margin-top: 120px;
-    filter: drop-shadow(0px 0px 7px #000000);
+    filter: var(--section-filter);
 }
 
 .donation-container {
     width: 550px;
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     padding: 40px;
     border-radius: 8px;
-    filter: drop-shadow(0px 0px 7px #000000);
+    filter: var(--filter-shadow);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -840,9 +949,9 @@ main {
 .donation-select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #477023;
-    background-color: white;
-    color: #2d2814;
+    border: 1px solid var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--secondary-color);
 }
 
 .button-div {
@@ -851,10 +960,10 @@ main {
 }
 
 .show-nurseries-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
     font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
+    border: 2px solid var(--secondary-color); /* Remove default border */
     border-radius: 5px; /* Rounded corners for buttons */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 10px 10px; /* Padding inside buttons */
@@ -864,7 +973,7 @@ main {
 .show-nurseries-button:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+    background-color: var(--accent-color);
 }
 
 .nursery-list {
@@ -874,17 +983,17 @@ main {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: white; /* Optional: different background */
-    filter: drop-shadow(0px 0px 7px #000000);
+    background-color: var(--light-color); /* Optional: different background */
+    filter: var(--section-filter);
 }
 
 .nursery-box {
     width: calc(33.33% - 20px); /* 3 boxes per row with gaps */
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    filter: var(--filter-shadow);
 }
 
 
@@ -908,24 +1017,23 @@ main {
 
 /* -------------------------------------------------------------------------------------------- */
 
-
 .volunteers-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 140px);
-    background-color: white;
+    background-color: var(--light-color);
     margin-top: 120px;
-    filter: drop-shadow(0px 0px 7px #000000);
+    filter: var(--section-filter);
 }
 
 .volunteers-container {
     width: 550px;
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     padding: 40px;
     border-radius: 8px;
-    filter: drop-shadow(0px 0px 7px #000000);
+    filter: var(--filter-shadow);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -945,9 +1053,9 @@ main {
 .donation-select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #477023;
-    background-color: white;
-    color: #2d2814;
+    border: 1px solid var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 .button-div {
@@ -956,19 +1064,20 @@ main {
 }
 
 .show-campaigns-button {
-    background-color: #477023; /* White background for buttons */
-    color: white; /* Green text color */
-    font-size: 24px;
-    border: 1px solid #2d2814; /* Remove default border */
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
+    font-size: 20px;
+    border: 2px solid var(--dark-color); /* Remove default border */
     border-radius: 5px; /* Rounded corners for buttons */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 10px 10px; /* Padding inside buttons */
+    width: 100%;
 }
 
 .show-campaigns-button:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 0px 0px 24px #477023; /* Darker shadow on hover */
+    background-color: var(--accent-color);
 }
 
 .campaigns-list {
@@ -978,18 +1087,18 @@ main {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: white; /* Optional: different background */
-    filter: drop-shadow(0px 0px 7px #000000);
+    background-color: var(--light-color); /* Optional: different background */
+    filter: var(--section-filter);
     display: none;
 }
 
 .campaign-box {
     width: calc(33.33% - 20px); /* 3 boxes per row with gaps */
-    background-color: #2d2814;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    filter: var(--filter-shadow);
 }
 
 .campaign-image-container {
@@ -1012,7 +1121,7 @@ main {
 
 /* ------------------------------------------------------------------------------------------ */
 
-/* General layout */
+/* General layout 
 .news-section {
     display: flex;
     flex-wrap: wrap;
@@ -1025,14 +1134,13 @@ main {
     filter: drop-shadow(0px 0px 7px #477023);
 }
 
-/* Date Styling */
 .weekly-date {
     text-align: center;
     margin-bottom: 20px;
     color: #2d2814;
 }
 
-/* News Container */
+
 .news-container {
     display: flex;
     flex-wrap: wrap;
@@ -1040,15 +1148,13 @@ main {
     width: 100%;
 }
 
-/* Side containers */
 .left-side-bb,
 .right-side-bb,
 .center-bb {
-    width: 100%; /* Initially take full width */
-    margin-bottom: 20px; /* Add space between boxes */
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-/* News boxes */
 .left-side-box,
 .center-box,
 .right-side-box {
@@ -1060,7 +1166,6 @@ main {
     flex-wrap: wrap;
 }
 
-/* Image styling */
 .news-image {
     width: 50%;
     height: auto;
@@ -1068,7 +1173,6 @@ main {
     margin-bottom: 10px;
 }
 
-/* Text styling */
 .news-text {
     color: #333;
     font-size: 1em;
@@ -1076,7 +1180,6 @@ main {
     margin-bottom: 15px;
 }
 
-/* Comment section */
 .comment-section {
     margin-top: 15px;
 }
@@ -1111,7 +1214,6 @@ main {
     cursor: pointer;
 }
 
-/* Show more button */
 .show-more-button {
     background-color: #477023;
     color: white;
@@ -1126,28 +1228,28 @@ main {
     background-color: #3d601d;
 }
 
-/* Responsive layout */
+
 @media (min-width: 768px) {
     .left-side-bb,
     .center-bb,
     .right-side-bb {
-        width: 30%; /* Restore original width */
-        margin-bottom: 0; /* Remove extra margin */
+        width: 30%;
+        margin-bottom: 0;
     }
 }
+*/
 
 /* ------------------------------------------------------------------------------------------ */
 
-/* General layout for the current-campaign section */
 .current-campaign {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center;
     padding: 20px;
-    background-color: white;
+    background-color: var(--light-color);
     margin-top: 120px;
-    filter: drop-shadow(0px 0px 7px #477023);
+    filter: var(--section-filter);
 }
 
 .current-campaign-container {
@@ -1157,7 +1259,22 @@ main {
     width: 100%; /* Ensure it takes full width */
 }
 
-/* Left side styling (Search and Menu) */
+.campaign-message {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--light-color);
+}
+
+.make-campaign-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.make-campaign-link:hover {
+    text-decoration: underline;
+}
+
 .current-campaign .left-side-cc {
     width: 25%;
     padding: 15px;
@@ -1167,9 +1284,8 @@ main {
 }
 
 .current-campaign .left-side-cc .search-box {
-    background-color: #2d2814;
+    background-color: var(--secondary-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 90%;
     padding: 15px;
     display: flex;
@@ -1178,28 +1294,9 @@ main {
     text-align: center;
 }
 
-.current-campaign .left-side-cc .search input[type="text"] {
-    border: none;
-    border-radius: 4px;
-    width: 75%;
-    color: #2d2814;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.current-campaign .left-side-cc .search button {
-    background-color: #477023;
-    color: white;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
 .current-campaign .left-side-cc .menu-box {
-    background-color: #2d2814;
+    background-color: var(--secondary-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 90%;
     padding: 15px;
     display: flex;
@@ -1212,13 +1309,13 @@ main {
     padding: 8px;
     border-radius: 4px;
     border: none;
-    color: #2d2814;
+    color: var(--secondary-color);
     width: 100%;
 }
 
 .current-campaign .left-side-cc .search-city-button {
-    background-color: #477023;
-    color: white;
+    background-color: var(--photo-box-shadow);
+    color: var(--light-color);
     border: none;
     padding: 15px 15px;
     border-radius: 5px;
@@ -1227,7 +1324,7 @@ main {
 }
 
 .current-campaign .left-side-cc .search-city-button:hover {
-    background-color: #3d601d;
+    background-color: var(--accent-color);
 }
 
 .current-campaign .left-side-cc .search-city-button:disabled {
@@ -1235,7 +1332,6 @@ main {
     cursor: not-allowed;
 }
 
-/* Center styling (Campaign display) */
 .current-campaign .center-cc {
     width: 40%;
     padding: 15px;
@@ -1258,10 +1354,10 @@ main {
 }
 
 .current-campaign .campaignbox {
-    background-color: #f9f9f9;
+    background-color: var(--light-color);
     border-radius: 8px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--light-box-shadow);
     width: 100%;
     padding: 15px;
 }
@@ -1296,25 +1392,28 @@ main {
     color: #555;
 }
 
-.current-campaign .comments {
-    margin-top: 15px;
+.current-campaign .comment-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.current-campaign .comments .registration-button {
-    background-color: #477023;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.registration-button {
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
+    font-size: 17px;
+    border: 1px solid var(--dark-color); /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+    margin-right: 20px; /* Space between buttons and nav items */
+    width: 30%;
 }
 
-.current-campaign .comments .registration-button:hover {
-    background-color: #3d601d;
+.registration-button:hover {
+    background-color: var(--accent-color);
 }
 
-/* Right side styling (Map) */
 .current-campaign .right-side-cc {
     width: 25%;
     padding: 15px;
@@ -1325,10 +1424,9 @@ main {
 }
 
 .current-campaign .right-side-cc .map-box {
-    background-color: #2d2814;
+    background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .current-campaign .right-side-cc .map-box .map-box-button {
@@ -1337,12 +1435,12 @@ main {
     border: none;
     border-radius: 4px;
     width: 100%;
-    color: #2d2814;
+    color: var(--secondary-color);
 }
 
 .current-campaign .right-side-cc .map-box .view-map {
-    background-color: #477023;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--light-color);
     border: none;
     padding: 15px 15px;
     border-radius: 5px;
@@ -1351,10 +1449,9 @@ main {
 }
 
 .current-campaign .right-side-cc .map-box .view-map:hover {
-    background-color: #3d601d;
+    background-color: var(--primary-color);
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
     .current-campaign .left-side-cc,
     .current-campaign .center-cc,
@@ -1375,22 +1472,162 @@ main {
 }
 
 /* ------------------------------------------------------------------------------------------ */
-/* Profile section container */
+
+.create-campaign-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    background-color: var(--light-color);
+    margin-top: 120px;
+    filter: var(--section-filter);
+}
+
+.campaign-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    filter: var(--filter-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campaign-container>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.formbold-input-label {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between icon and text */
+    font-size: 30px; /* Adjust font size as needed */
+    color: var(--dark-color); /* Adjust text color */
+    cursor: pointer; /* Indicate it's a label for a file input */
+    padding: 10px 15px; /* Add padding around text */
+    border: 1px solid var(--primary-color); /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: var(--light-color); /* Light background color */
+}
+
+.formbold-input-label svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-color); /* Adjust icon color */
+}
+
+.formbold-input-label:hover {
+    background-color: #e4ffde; /* Darken background on hover */
+    border-color: #999; /* Darken border on hover */
+}
+
+  .formbold-form-input:focus + .formbold-form-label {
+    color: #6A64F1;
+  }
+
+  .formbold-input-file {
+    margin-top: 30px;
+  }
+  .formbold-input-file input[type="file"] {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    z-index: -1;
+  }
+  .formbold-input-file .formbold-input-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  .formbold-filename-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .formbold-filename {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 24px;
+    color: #536387;
+  }
+  .formbold-filename svg {
+    cursor: pointer;
+}
+
+.formbold-btn {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 12px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6A64F1;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.campaign-container label {
+    margin-bottom: 5px;
+}
+
+.campaign-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    height: 100px;
+    border: 2px solid var(--primary-color);
+}
+
+.campaign-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--light-color);
+    border-radius: 4px;
+    border: 2px solid var(--primary-color);
+}
+
+.create-campaign {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid var(--primary-color);
+}
+
+.create-campaign:hover {
+    background-color: var(--accent-color);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
 .profile-section {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #f9f9f9;
-
+    background-color: var(--light-color);
     margin-top: 120px;
-    filter: drop-shadow(0px 0px 7px #477023);
+    filter: var(--section-filter);
 }
 
-/* Inner profile container */
 .profile-container {
     width: 70%;
-    background-color: white;
+    background-color: var(--light-color);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -1403,24 +1640,21 @@ main {
     align-items: center;
 }
 
-/* Avatar styling */
 .profile-avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid #477023;
+    border: 4px solid var(--primary-color);
 }
 
-/* Name styling */
 .profile-name {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Stats section */
 .profile-stats {
     display: flex;
     flex-direction: row; /* Stack stats vertically */
@@ -1442,7 +1676,6 @@ main {
     margin-bottom: 5px; /* Add spacing between stats */
 }
 
-/* Plant a tree box */
 .plant-tree-box {
     background-color: #e9e9e9;
     padding: 20px;
@@ -1452,7 +1685,7 @@ main {
 
 .plant-tree-box i {
     font-size: 2em;
-    color: #477023;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -1460,22 +1693,10 @@ main {
     color: #555;
 }
 
-/* Update profile button */
-.update-profile-button {
-    background-color: #477023;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
 .update-profile-button:hover {
-    background-color: #3d601d;
+    background-color: var(--accent-color);
 }
 
-/* Avatar Upload Styles */
 .avatar-upload {
     position: relative;
     max-width: 200px;
@@ -1499,7 +1720,7 @@ main {
     height: 34px;
     margin-bottom: 0;
     border-radius: 100%;
-    background: #477023;
+    background: var(--primary-color);
     border: 1px solid transparent;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
     cursor: pointer;
@@ -1508,7 +1729,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--light-color);
     font-size: 1.2em;
 }
 
@@ -1535,24 +1756,22 @@ main {
     background-position: center;
 }
 
-/* Update Button Styles */
 .update-profile-button {
-    background-color: #477023;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+    background-color: var(--primary-color); /* White background for buttons */
+    color: var(--light-color); /* Green text color */
+    font-size: 17px;
+    border: 1px solid var(--dark-color); /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Padding inside buttons */
+    margin-right: 20px; /* Space between buttons and nav items */
+    width: 30%;
 }
 
 /* ------------------------------------------------------------------------------------------ */
 
-/* Import Aref Ruqaa font */
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
 
-/* style.css */
-/* Game Page Section Styles */
 .game-page-section {
     display: flex;
     flex-direction: row;
@@ -1579,28 +1798,23 @@ main {
     /* Ensure padding is included in width */
 }
 
-/* Push the .center div to the left */
 .center {
     order: -1;
     /* Moves the center div to the start */
     /* Takes up 60% of the container */
 }
 
-/* You can adjust the .post-box and .games-box as needed */
 .post-box {
     background-color: rgb(255, 255, 255); /* White background for game box */
-    border: #477023 solid 4px;
+    border: var(--primary-color) solid 4px;
     border-radius: 10px;
     padding: 15px;
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    box-shadow: var(--dark-box-shadow77);
     text-align: center;
     margin-bottom: 20px;
 }
 
 .games-box {
-    /* Add styling for games-box */
-    border: 1px solid #b40202;
-    /* Example border */
     padding: 10px;
     margin-bottom: 20px;
     /* Add some margin */
@@ -1612,7 +1826,7 @@ main {
     cursor: pointer; /* Pointer cursor on hover */
     margin-right: 5px;
     margin-top: 10px;
-    color: #477023;
+    color: var(--primary-color);
 }
 
 .input-area {
@@ -1624,17 +1838,18 @@ main {
     width: 100%;
     height: 30px;
     border-radius: 30px;
-    border: 2px #45a049 solid;
+    border: 2px var(--accent-color) solid;
     margin-left: 5px;
     margin-right: 5px;
 }
 
 .post-icon {
-    font-size: 20px;
-    color: #45a049; /* White text color */
+    font-size: 27px;
+    color: var(--primary-color); /* White text color */
     cursor: pointer; /* Pointer cursor on hover */
-    margin-left: 5px;
-    margin-top: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 .post-button:hover {
@@ -1679,7 +1894,7 @@ main {
     color: #000000;
     border-radius: 10px;
     padding: 15px;
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    box-shadow: var(--dark-box-shadow77);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -1691,117 +1906,107 @@ main {
 .water-drop-icon1 {
     width: 10px; /* Adjust icon size */
     color: #6f9cf6;
-    margin-left: 5px;
+    margin-left: 15px;
     margin-right: 10px;
     cursor: pointer;
 }
 
 .like-count {
     margin-left: 0px; /* Space between icon and count */
+    font-size: 50px;
 }
 
 hr {
     width: 100%;
-    border-top: 2px solid #45a049;
-    border-top: 2px solid #45a049;
+    border-top: 2px solid var(--third-color);
+    border-top: 2px solid var(--third-color);
 }
 
-/* ---- */
 .game-image {
     width: 40%; /* Make image responsive to fit the box width */
     max-width: 100%; /* Responsive width */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
-/* ---- */
+
 .game-description {
     margin-top: 10px; /* Space above description text */
     margin-left: 20px;
 }
 
-/* ---- */
 .comment-link {
-    color: #4CAF50; /* Green color for comment link */
+    color: var(--accent-color); /* Green color for comment link */
     cursor: pointer; /* Pointer cursor on hover */
+    font-size: 50px;
 }
 
-/* ---- */
 .comment-input-area {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
 }
 
-/* ---- */
 .comment-input {
     width: 100%;
     height: 30px;
     border-radius: 30px;
-    border: 2px #45a049 solid;
+    border: 2px var(--accent-color) solid;
     margin-left: 20px;
 }
 
-/* ---- */
 .comment-input:hover {
-    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+    box-shadow: var(--light-box-shadow);
 }
 
-/* ---- */
 .send-comment-icon {
     font-size: 20px;
-    color: #45a049; /* White text color */
+    color: var(--accent-color); /* White text color */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 14px;
 }
 
 .comment-icon {
     margin-left: 7px;
+    font-size: 24px;
 }
 
-/* ---- */
 .user-thumbnail {
     width: 70px; /* Thumbnail size */
     border-radius: 100%; /* Circular thumbnails */
-    filter: drop-shadow(6px 2px 7px rgba(76, 175, 80, 0.7));
+    filter: drop-shadow(7px 7px 7px var(--accent-color));
     cursor: pointer;
     padding: 7px;
 }
 
-/* ---- */
 .user-thumbnail:hover {
-    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+    box-shadow: 6px 6px 15px var(--sec-primary-color); /* Darker shadow on hover */
 }
 
-/* ---- */
 .user-name {
-    font-weight: bold; /* Bold user name */
     margin-left: 10px;
     cursor: pointer;
 }
 
-/* ---- */
+/* ---- 
 .comments {
     padding: 15px;
     border-radius: 5px;
 }
 
-/* ---- */
 .comment {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    border: 1px dashed #45a049;
+    border: 1px dashed var(--sec-primary-color);
     border-radius: 50px;
     padding: 4px;
     cursor: pointer;
 }
 
-/* ---- */
 .comment:hover {
-    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7); /* Darker shadow on hover */
+    box-shadow: 6px 6px 15px rgba(76, 175, 80, 0.7);
 }
 
-/* ---- */
 .comment-content {
     display: flex;
     align-items: center;
@@ -1819,16 +2024,17 @@ hr {
 }
 
 .send-comment-button:hover {
-   background-color: #45a049; /* Darker green on hover */ 
+   background-color: #45a049;  
 }
+*/
 
 .user-water-drop {
-    background-color: rgb(255, 255, 255); /* Light blue background */
-    color: #000000;
+    background-color: var(--secondary-color); /* Light blue background */
+    color: var(--light-color);
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    filter: var(--filter-shadow);
     margin-bottom: 20px;
 }
 
@@ -1838,12 +2044,12 @@ hr {
 }
 
 .topwaterdropbox {
-    background-color: rgb(255, 255, 255); /* Light blue background */
-    color: #000000;
+    background-color: var(--secondary-color); /* Light blue background */
+    color: var(--light-color);
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */
+    filter: var(--filter-shadow);
 }
 
 .top-water-drop {
@@ -1859,15 +2065,15 @@ hr {
 }
 
 .water-drop-count {
-    font-size: 17px;
+    font-size: 40px;
 }
 /* ------------------------------------------------------------------------------------------ */
 
 .about-us-section {
     padding: 40px; /* Add padding around the section */
     background-color: white; /* Light background for contrast */
-    color: #477023;
-    box-shadow: inset 0px 0px 10px rgba(76, 175, 80, 0.5); /* Clear inner shadow */ 
+    color: var(--photo-box-shadow);
+    box-shadow: var(--lighter-box-shadow); 
 }
 
 .about-us-section h2 {
@@ -1883,14 +2089,14 @@ hr {
 }
 
 .about-item {
-    background-color: #2d2814; /* White background for each item */
-    color: white;
+    background-color: var(--secondary-color); /* White background for each item */
+    color: var(--light-color);
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Padding inside each item */
     margin: 10px; /* Space between items */
     width: 350px; /* Fixed width for consistency */
     height: auto;
-    filter: drop-shadow(9px 9px 7px #477023);
+    filter: var(--filter-shadow);
 }
 
 .about-item h3 {
@@ -1912,22 +2118,22 @@ hr {
 }
 
 .about-item a {
-    color: #477023; /* Green color for links */
+    color: var(--photo-box-shadow); /* Green color for links */
     text-decoration: none; /* Remove underline from links */
 }
 
 .about-item a:hover {
-    text-decoration: underline white; /* Underline on hover for links */
+    text-decoration: underline var(--light-color); /* Underline on hover for links */
 }
 
 .about-item:hover {
     transform: translateY(-4px); /* Start slightly above to create a slide effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for fade and slide effect */
-    box-shadow: 7px 7px 24px #477023; /* Darker shadow on hover */
+    box-shadow: var(--light-box-shadow);
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: black;
+    background-color: var(--dark-color);
 }

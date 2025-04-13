@@ -30,7 +30,7 @@
 
         <div class="logo-and-name">
             <div class="logo">
-                <img src="photos/trees.png" alt="يلا نزرع Logo"> <!-- Replace with your logo path -->
+                <a href="homepage.html"><img src="photos/trees.png" alt="يلا نزرع Logo"></a> <!-- Replace with your logo path -->
             </div>
             <div>
                 <a href="homepage.html" class="site-name">يلا نزرع</a> <!-- Changed from p to a -->
@@ -50,7 +50,6 @@
                     <li class="nav-item">
                         <a href="#">المُجتمع</a>
                         <ul class="dropdown">
-                            <li><a href="blog.html">المُدوّنة</a></li>
                             <li><a href="game.html">اللّعبة</a></li>
                             <li><a href="#about-us">مَن نحن !؟</a></li>
                         </ul>
@@ -60,7 +59,6 @@
                         <ul class="dropdown">
                             <li><a href="mapy.html">الخريطة</a></li>
                             <li><a href="currentcampaign.html">الحملات الحاليّة</a></li>
-                            <li><a href="previouscampaigns.html">الحملات السّابقة</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,12 +74,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
-
-<<<<<<< HEAD
-            <a href="signup.html"><button class="sign-up-button-bar">تسجيل الدخول</button></a>
-=======
             <a href="signup.php"><button class="sign-up-button-bar">تسجيل الدخول</button></a>
->>>>>>> c8726fc (ali)
         </div>
 
         <div class="stting-icon" id="setting-icon">
@@ -93,7 +86,9 @@
     <div id="sidebar" class="sidebar" dir='rtl' lang='ar'>
         <ul>
             <div class="useraccount">
-                <i class="fa-solid fa-user-gear" style="color: black; font-size: 24px; cursor: pointer;"><a href="#" class="ps">الحساب</a></i>
+                <i class="fa-solid fa-user-gear" style="color: black; font-size: 24px; cursor: pointer;">
+                    <a href="profile.html" class="ps">الحساب</a>
+                </i>
             </div>
             <hr>
             <li><a href="#">الإشعارات</a></li>
@@ -110,11 +105,9 @@
 
             <div class="left-side-cc">
                 <div class="search-box">
-                    <div class="search">
-                        <form action="#">
-                            <input type="text" placeholder="ابحث بالاسم" name="search" id="search-input" oninput="filterCampaigns()">
-                            <button type="button"><i class="fa fa-search"></i></button>
-                        </form>
+                    <div class="campaign-message">
+                        هل ترغب في إنشاء حملة الآن؟
+                        <a href="createcampaign.html" class="make-campaign-link">إنشاء حملة</a>
                     </div>
                 </div>
             
@@ -143,56 +136,39 @@
             </div>
         
             <div class="center-cc">
-                <!-- Container for displaying campaigns -->
                 <div id="campaign-container">
                     <div class="currentcampaginsbox">
                         <div class="campaignbox" data-game-id="game1">
                             <div class="campaign-content">
-                                <img src="photo41.jpg" alt="صورة الحملة" class="campaign-image"> <!-- Game image on the left -->
-                                <div class="campaign-details"> <!-- Container for game details -->
+                                <img src="/Atheer7/photos/photo_27_2025-04-13_21-04-18.jpg" alt="صورة الحملة" class="campaign-image">
+                                <div class="campaign-details">
                                     <p class="campaign-description">لوريم إيبسوم دولار سيت أميت كونسيكتيتور أدايبا يسكينج إيليت. بياتي مولستيي فولوبتيت أسبرياتور كوس أديبسيكي تيمبوري كيوبيديتيت فيرو كومودي ريسينديندس بيرسبايكياتيس دولاريم، ديستينكتيو سوليوتا، اد أوبتيو بوسيموس أ. كيو، كويسكوام نومكوام؟ نيمو دولاريم إياكي أكوسانتيوم كوس نيسي أوفيسيا أكسبيدتا تينيتور؟</p>
                                     <p class="location">الموقع: منطقة xyz</p>
-        
-        
                                     <hr>
-        
-                                    <div class="comments"> <!-- Initially hidden comments section -->
-                                        <div class="comment">
                                             <div class="comment-content">
                                                 <button class="registration-button" onclick="registerForCampaign(this)">تسجيل</button>
                                             </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-        
+            
                         <div class="campaignbox" data-game-id="game4">
                             <div class="campaign-content">
-                                <img src="photo42.jpg" alt="صورة الحملة" class="campaign-image"> <!-- Game image on the left -->
-                                <div class="campaign-details"> <!-- Container for game details -->
-                                    <p class="campaign-description">لوريم إيبسوم دولار سيت أميت كونسيكتيتور أدايبا يسكينج.
-                                    </p>
+                                <img src="/Atheer7/photos/photo_5_2025-04-13_21-04-18.jpg" alt="صورة الحملة" class="campaign-image">
+                                <div class="campaign-details">
+                                    <p class="campaign-description">لوريم إيبسوم دولار سيت أميت كونسيكتيتور أدايبا يسكينج.</p>
                                     <p class="location">الموقع: منطقة abc</p>
-        
-        
                                     <hr>
-        
-                                    <div class="comments"> <!-- Initially hidden comments section -->
-                                        <div class="comment">
                                             <div class="comment-content">
                                                 <button class="registration-button" onclick="registerForCampaign(this)">تسجيل</button>
                                             </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-        
                     </div>
-                </div> <!-- Centered campaign container -->
-        
+                </div>
             </div>
+            
         
             <div class="right-side-cc">
                 <div class="map-box">
