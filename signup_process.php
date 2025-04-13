@@ -17,6 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $target_dir = "uploads/avatars/";
         $target_file = $target_dir . basename($avatar_name);
 
+        // تأكد أن المجلد موجود
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+
         if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
             $avatar_path = $target_file;
         }
@@ -32,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // حفظ البيانات
-    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, phone, country, city, avatar) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    // حفظ البيانات في قاعدة البيانات
+    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, phone, country, city, avatar_path) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$full_name, $email, $password, $phone, $country, $city, $avatar_path]);
 
     $_SESSION['signup_success'] = "✅ تم إنشاء الحساب بنجاح. يمكنك تسجيل الدخول الآن.";
