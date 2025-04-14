@@ -996,7 +996,6 @@ main {
     filter: var(--filter-shadow);
 }
 
-
 .nursery-image-container {
     width: auto; /* Make width flexible */
     height: auto; /* Make height flexible */
@@ -1632,6 +1631,24 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    background-image: url('/Atheer7/photos/photo_6_2025-04-14_09-32-55.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: var(--section-filter);
+}
+
+.profile-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(2px);
+    z-index: -1;
 }
 
 .im-name {
@@ -1650,29 +1667,32 @@ main {
 }
 
 .profile-name {
-    font-size: 1.2em;
-    color: #333;
+    font-size: 2em;
+    color: var(--light-color);
     margin-bottom: 20px;
 }
 
 .profile-stats {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row; /* Stack stats vertically */
     align-items: center; /* Center items horizontally */
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 20px;
-    width: 93%;
+    width: 100%;
 }
 
 .profile-stats-value {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 130px;
+    margin-right: 50px;
 }
 
 .profile-stats div {
-    font-size: 1em;
-    color: #333;
+    font-size: 1.2em;
+    color: var(--light-color);
     margin-bottom: 5px; /* Add spacing between stats */
 }
 
@@ -1719,7 +1739,7 @@ main {
     width: 34px;
     height: 34px;
     margin-bottom: 0;
-    border-radius: 100%;
+    border-radius: 20%;
     background: var(--primary-color);
     border: 1px solid transparent;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
@@ -1730,12 +1750,12 @@ main {
     align-items: center;
     justify-content: center;
     color: var(--light-color);
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .avatar-upload .avatar-edit input+label:hover {
-    background: #f1f1f1;
-    border-color: #d2d2d2;
+    background: var(--dark-color);
+    border-color: var(--third-color);
 }
 
 .avatar-upload .avatar-preview {
